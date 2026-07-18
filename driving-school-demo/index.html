@@ -1,0 +1,797 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Apex Driving School — Pass with Confidence, First Time</title>
+<meta name="description" content="Apex Driving School — DVSA-approved instruction, manual &amp; automatic. Book your first lesson online in under a minute.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Archivo+Black&family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --bg:#121316;
+    --bg-alt:#1a1c20;
+    --card:#1e2126;
+    --border:#2d3038;
+    --yellow:#FFD400;
+    --yellow-dim:#d9b400;
+    --green:#17E07E;
+    --green-dim:#0fb864;
+    --red:#FF4457;
+    --white:#ffffff;
+    --muted:#9aa1ad;
+  }
+
+  *{margin:0;padding:0;box-sizing:border-box;}
+
+  html{scroll-behavior:smooth;}
+
+  body{
+    background:var(--bg);
+    color:var(--white);
+    font-family:'Inter',-apple-system,BlinkMacSystemFont,sans-serif;
+    line-height:1.6;
+    overflow-x:hidden;
+  }
+
+  a{text-decoration:none;color:inherit;}
+  ul{list-style:none;}
+  img{max-width:100%;display:block;}
+
+  .container{
+    width:100%;
+    max-width:1160px;
+    margin:0 auto;
+    padding:0 24px;
+  }
+
+  section{padding:100px 0;position:relative;}
+
+  h1,h2{
+    font-family:'Archivo Black',sans-serif;
+    font-weight:400;
+    letter-spacing:-0.01em;
+    text-transform:uppercase;
+  }
+  h3{font-weight:800;letter-spacing:-0.01em;}
+
+  .eyebrow{
+    color:var(--yellow);
+    font-size:13px;
+    font-weight:800;
+    letter-spacing:0.2em;
+    text-transform:uppercase;
+    margin-bottom:14px;
+    display:block;
+  }
+
+  .section-title{
+    font-size:clamp(28px,4vw,40px);
+    margin-bottom:16px;
+    line-height:1.1;
+  }
+
+  .section-sub{
+    color:var(--muted);
+    font-size:17px;
+    max-width:560px;
+  }
+
+  .center{text-align:center;margin-left:auto;margin-right:auto;}
+
+  /* Road-marking divider */
+  .road-divider{
+    height:5px;
+    width:100%;
+    background-image:repeating-linear-gradient(90deg, var(--yellow) 0 26px, transparent 26px 54px);
+    opacity:0.55;
+  }
+
+  /* Buttons */
+  .btn{
+    display:inline-flex;
+    align-items:center;
+    justify-content:center;
+    gap:8px;
+    padding:16px 32px;
+    border-radius:999px;
+    font-weight:800;
+    font-size:15px;
+    cursor:pointer;
+    border:2px solid transparent;
+    transition:transform .2s cubic-bezier(.34,1.56,.64,1), box-shadow .25s ease, background .25s ease, color .25s ease, border-color .25s ease;
+    white-space:nowrap;
+  }
+  .btn:active{transform:translateY(1px) scale(0.98);}
+
+  .btn-green{
+    background:var(--green);
+    color:#08150e;
+    box-shadow:0 6px 0 var(--green-dim), 0 10px 24px rgba(23,224,126,0.25);
+  }
+  .btn-green:hover{
+    transform:translateY(-3px);
+    box-shadow:0 9px 0 var(--green-dim), 0 16px 30px rgba(23,224,126,0.35);
+  }
+  .btn-green:active{
+    transform:translateY(2px);
+    box-shadow:0 3px 0 var(--green-dim), 0 6px 16px rgba(23,224,126,0.3);
+  }
+
+  .btn-outline{
+    background:transparent;
+    color:var(--yellow);
+    border:2px solid var(--yellow);
+  }
+  .btn-outline:hover{
+    background:rgba(255,212,0,0.1);
+    transform:translateY(-3px);
+  }
+
+  .btn-block{width:100%;}
+
+  /* Nav */
+  header{
+    position:fixed;
+    top:0;left:0;right:0;
+    z-index:1000;
+    backdrop-filter:blur(14px);
+    background:rgba(18,19,22,0.82);
+    border-bottom:3px solid transparent;
+    border-image:repeating-linear-gradient(90deg, var(--yellow) 0 14px, transparent 14px 28px) 3;
+  }
+
+  nav{
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+    padding:16px 24px;
+    max-width:1160px;
+    margin:0 auto;
+  }
+
+  .logo{
+    font-family:'Archivo Black',sans-serif;
+    font-size:18px;
+    color:var(--white);
+    letter-spacing:-0.01em;
+    display:flex;
+    align-items:center;
+    gap:10px;
+    text-transform:uppercase;
+  }
+  .logo span{color:var(--yellow);}
+
+  .nav-links{
+    display:flex;
+    gap:32px;
+    align-items:center;
+  }
+
+  .nav-links a:not(.btn){
+    font-size:14.5px;
+    font-weight:600;
+    color:var(--white);
+    position:relative;
+    transition:color .2s ease;
+  }
+  .nav-links a:not(.btn):hover{color:var(--yellow);}
+  .nav-links a:not(.btn)::after{
+    content:'';
+    position:absolute;
+    left:0;bottom:-4px;
+    width:0;height:2px;
+    background:var(--yellow);
+    transition:width .25s ease;
+  }
+  .nav-links a:not(.btn):hover::after{width:100%;}
+
+  .nav-links .btn{padding:11px 24px;font-size:14px;}
+
+  .menu-toggle{
+    display:none;
+    flex-direction:column;
+    gap:5px;
+    background:none;
+    border:none;
+    cursor:pointer;
+    padding:6px;
+  }
+  .menu-toggle span{
+    width:24px;height:3px;background:var(--yellow);border-radius:2px;
+    transition:all .25s ease;
+  }
+
+  /* Hero */
+  .hero{
+    min-height:100vh;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    text-align:center;
+    position:relative;
+    padding-top:110px;
+    overflow:hidden;
+  }
+
+  .hero-road{
+    position:absolute;
+    left:0; right:0; bottom:0;
+    width:100%;
+    height:32%;
+    z-index:0;
+    mask-image:linear-gradient(to top, black 15%, transparent 70%);
+    -webkit-mask-image:linear-gradient(to top, black 15%, transparent 70%);
+  }
+
+  .hero-inner{position:relative;z-index:1;max-width:780px;padding:0 24px;}
+
+  .hero-badge{
+    display:inline-flex;
+    align-items:center;
+    gap:8px;
+    padding:8px 18px;
+    border:2px dashed var(--yellow);
+    border-radius:999px;
+    color:var(--yellow);
+    font-size:13px;
+    font-weight:800;
+    letter-spacing:0.08em;
+    text-transform:uppercase;
+    margin-bottom:30px;
+    background:rgba(255,212,0,0.06);
+  }
+
+  .hero h1{
+    font-size:clamp(36px,6.6vw,68px);
+    line-height:1.15;
+    margin-bottom:24px;
+  }
+  .hero h1 .highlight{
+    display:inline-block;
+    background:var(--yellow);
+    color:#121316;
+    padding:2px 16px;
+    border-radius:10px;
+    transform:rotate(-2deg);
+    box-shadow:5px 5px 0 rgba(0,0,0,0.4);
+    margin-top:8px;
+  }
+
+  .hero p{
+    color:var(--muted);
+    font-size:clamp(16px,2vw,19px);
+    max-width:580px;
+    margin:0 auto 40px;
+  }
+
+  .hero-actions{
+    display:flex;
+    gap:18px;
+    justify-content:center;
+    flex-wrap:wrap;
+  }
+
+  .hero-stats{
+    display:flex;
+    gap:48px;
+    justify-content:center;
+    margin-top:64px;
+    flex-wrap:wrap;
+  }
+  .hero-stat{text-align:center;}
+
+  .stat-dial{
+    width:116px;
+    height:116px;
+    border-radius:50%;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    position:relative;
+    margin:0 auto 14px;
+    background:
+      conic-gradient(var(--dial-color, var(--yellow)) calc(var(--pct) * 1%), transparent 0),
+      repeating-conic-gradient(rgba(255,255,255,0.16) 0 1.5deg, transparent 1.5deg 30deg);
+  }
+  .stat-dial::before{
+    content:'';
+    position:absolute;
+    inset:12px;
+    background:var(--bg);
+    border-radius:50%;
+    box-shadow:inset 0 0 0 1px var(--border);
+  }
+  .stat-dial-value{
+    position:relative;
+    font-family:'Archivo Black',sans-serif;
+    font-size:21px;
+    color:var(--white);
+    z-index:1;
+  }
+  .hero-stat span{font-size:13px;color:var(--muted);font-weight:600;}
+
+  /* Services */
+  .services{background:var(--bg-alt);}
+
+  .grid-4{
+    display:grid;
+    grid-template-columns:repeat(4,1fr);
+    gap:22px;
+    margin-top:56px;
+  }
+
+  .card{
+    background:var(--card);
+    border:1px solid var(--border);
+    border-top:4px solid var(--accent, var(--yellow));
+    border-radius:14px;
+    padding:30px 26px;
+    transition:transform .3s cubic-bezier(.34,1.56,.64,1), border-color .3s ease, box-shadow .3s ease;
+    display:flex;
+    flex-direction:column;
+  }
+  .card:hover{
+    transform:translateY(-10px) scale(1.02);
+    box-shadow:0 20px 40px rgba(0,0,0,0.45), 0 0 0 1px var(--accent, var(--yellow));
+  }
+
+  .card-top{margin-bottom:16px;}
+
+  .card h3{font-size:19px;margin-bottom:4px;color:var(--white);}
+  .card-duration{color:var(--muted);font-size:13px;font-weight:500;}
+
+  .card-price{
+    color:var(--accent, var(--yellow));
+    font-family:'Archivo Black',sans-serif;
+    font-size:20px;
+    display:block;
+    margin-top:10px;
+  }
+
+  .card p{color:var(--muted);font-size:14.5px;margin-bottom:24px;flex-grow:1;}
+
+  /* Instructor */
+  .instructor-wrap{
+    display:flex;
+    align-items:center;
+    gap:56px;
+    margin-top:56px;
+  }
+
+  .instructor-photo{
+    flex-shrink:0;
+    width:220px;
+    height:220px;
+    border-radius:50%;
+    background:var(--card);
+    border:3px dashed var(--yellow);
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    font-family:'Archivo Black',sans-serif;
+    font-size:60px;
+    color:var(--yellow);
+  }
+
+  .instructor-info h3{font-size:27px;margin-bottom:6px;color:var(--white);}
+  .instructor-role{color:var(--green);font-size:14.5px;font-weight:700;margin-bottom:18px;display:block;}
+  .instructor-info p{color:var(--muted);font-size:15.5px;margin-bottom:24px;max-width:560px;}
+
+  .badge-row{display:flex;gap:12px;flex-wrap:wrap;}
+  .badge{
+    display:inline-flex;
+    align-items:center;
+    gap:6px;
+    padding:8px 16px;
+    border-radius:999px;
+    border:1px solid var(--border);
+    background:var(--bg-alt);
+    font-size:13px;
+    font-weight:700;
+    color:var(--white);
+  }
+  .badge .dot{color:var(--yellow);}
+
+  /* Testimonials */
+  .testimonials{background:var(--bg-alt);}
+
+  .grid-3{
+    display:grid;
+    grid-template-columns:repeat(3,1fr);
+    gap:24px;
+    margin-top:56px;
+  }
+
+  .testimonial-card{
+    background:var(--card);
+    border:1px solid var(--border);
+    border-radius:14px;
+    padding:32px 28px;
+    transition:transform .3s cubic-bezier(.34,1.56,.64,1), border-color .3s ease;
+  }
+  .testimonial-card:hover{
+    transform:translateY(-8px);
+    border-color:var(--yellow);
+  }
+  .stars{color:var(--yellow);font-size:15px;margin-bottom:16px;letter-spacing:2px;}
+  .testimonial-card p{color:var(--muted);font-size:15px;margin-bottom:20px;}
+  .testimonial-name{font-weight:800;font-size:14.5px;color:var(--white);}
+  .testimonial-meta{color:var(--muted);font-size:13px;}
+
+  /* Booking CTA */
+  .cta-section{
+    text-align:center;
+  }
+  .cta-section h2{font-size:clamp(30px,4.5vw,44px);margin-bottom:14px;}
+  .cta-section p{color:var(--muted);font-size:17px;margin-bottom:36px;}
+  .cta-section .btn{padding:20px 46px;font-size:16.5px;}
+
+  @keyframes pulse-glow{
+    0%,100%{box-shadow:0 6px 0 var(--green-dim), 0 10px 24px rgba(23,224,126,0.25);}
+    50%{box-shadow:0 6px 0 var(--green-dim), 0 14px 40px rgba(23,224,126,0.55);}
+  }
+  .cta-section .btn-green{animation:pulse-glow 2.4s ease-in-out infinite;}
+
+  /* Contact */
+  .contact-grid{
+    display:grid;
+    grid-template-columns:repeat(3,1fr);
+    gap:24px;
+    margin-top:56px;
+  }
+
+  .contact-card{
+    background:var(--card);
+    border:1px solid var(--border);
+    border-radius:14px;
+    padding:30px;
+    transition:border-color .3s ease, transform .3s cubic-bezier(.34,1.56,.64,1);
+  }
+  .contact-card:hover{
+    border-color:var(--yellow);
+    transform:translateY(-6px);
+  }
+
+  .contact-icon{
+    flex-shrink:0;
+    width:44px;height:44px;
+    border-radius:10px;
+    background:rgba(255,212,0,0.12);
+    color:var(--yellow);
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    font-size:20px;
+    margin-bottom:16px;
+  }
+  .contact-card h3{font-size:16px;margin-bottom:10px;color:var(--yellow);}
+  .contact-card p{color:var(--muted);font-size:14.5px;line-height:1.7;}
+  .contact-card a{color:var(--white);transition:color .2s ease;}
+  .contact-card a:hover{color:var(--yellow);}
+
+  /* Footer */
+  footer{
+    padding:44px 0;
+    border-top:3px solid transparent;
+    border-image:repeating-linear-gradient(90deg, var(--yellow) 0 14px, transparent 14px 28px) 3;
+    text-align:center;
+  }
+  footer p{color:var(--muted);font-size:14px;margin-bottom:6px;}
+  footer .credit{font-size:12.5px;color:#666;}
+  footer .credit a{color:var(--yellow-dim);transition:color .2s ease;}
+  footer .credit a:hover{color:var(--yellow);}
+
+  /* Scroll reveal */
+  .reveal{
+    opacity:0;
+    transform:translateY(28px);
+    transition:opacity .7s ease, transform .7s ease;
+  }
+  .reveal.visible{
+    opacity:1;
+    transform:translateY(0);
+  }
+
+  /* Responsive */
+  @media (max-width:1000px){
+    .grid-4{grid-template-columns:repeat(2,1fr);}
+  }
+
+  @media (max-width:900px){
+    .grid-3{grid-template-columns:1fr;}
+    .contact-grid{grid-template-columns:1fr;}
+    .instructor-wrap{flex-direction:column;text-align:center;gap:32px;}
+    .instructor-info p{margin-left:auto;margin-right:auto;}
+    .badge-row{justify-content:center;}
+  }
+
+  @media (max-width:768px){
+    section{padding:76px 0;}
+    .nav-links{
+      position:fixed;
+      top:64px;left:0;right:0;
+      flex-direction:column;
+      align-items:flex-start;
+      gap:0;
+      background:rgba(18,19,22,0.98);
+      border-bottom:1px solid var(--border);
+      max-height:0;
+      overflow:hidden;
+      transition:max-height .3s ease;
+    }
+    .nav-links.open{max-height:420px;}
+    .nav-links a:not(.btn){
+      padding:16px 24px;
+      width:100%;
+      border-bottom:1px solid var(--border);
+    }
+    .nav-links .btn{margin:20px 24px;}
+    .menu-toggle{display:flex;}
+    .grid-4{grid-template-columns:1fr;}
+    .hero-actions{flex-direction:column;width:100%;}
+    .hero-actions .btn{width:100%;}
+    .hero-stats{gap:28px;}
+    .instructor-photo{width:180px;height:180px;font-size:48px;}
+  }
+</style>
+</head>
+<body>
+
+<header>
+  <nav>
+    <a href="#top" class="logo">🏁 Apex <span>Driving School</span></a>
+    <ul class="nav-links" id="navLinks">
+      <li><a href="#services">Lessons</a></li>
+      <li><a href="#instructor">Instructor</a></li>
+      <li><a href="#testimonials">Reviews</a></li>
+      <li><a href="#contact">Contact</a></li>
+      <li><a href="https://cal.com/apex-driving-demo" target="_blank" rel="noopener" class="btn btn-green">Book Now</a></li>
+    </ul>
+    <button class="menu-toggle" id="menuToggle" aria-label="Toggle menu">
+      <span></span><span></span><span></span>
+    </button>
+  </nav>
+</header>
+
+<main id="top">
+
+  <!-- HERO -->
+  <section class="hero">
+    <svg class="hero-road" viewBox="0 0 1000 600" preserveAspectRatio="xMidYMax slice" aria-hidden="true">
+      <defs>
+        <linearGradient id="roadGrad" x1="0" y1="0" x2="0" y2="1">
+          <stop offset="0%" stop-color="#2a2d33"/>
+          <stop offset="100%" stop-color="#0d0e10"/>
+        </linearGradient>
+        <radialGradient id="roadGlow" cx="50%" cy="34%" r="55%">
+          <stop offset="0%" stop-color="rgba(255,212,0,0.32)"/>
+          <stop offset="100%" stop-color="rgba(255,212,0,0)"/>
+        </radialGradient>
+      </defs>
+      <ellipse cx="500" cy="235" rx="430" ry="260" fill="url(#roadGlow)"/>
+      <polygon points="500,235 250,600 750,600" fill="url(#roadGrad)"/>
+      <polygon points="500,235 250,600 292,600" fill="rgba(255,255,255,0.05)"/>
+      <polygon points="500,235 708,600 750,600" fill="rgba(255,255,255,0.05)"/>
+      <line x1="500" y1="470" x2="500" y2="600" stroke="#FFD400" stroke-width="7" stroke-opacity="0.4" stroke-dasharray="26 38"/>
+    </svg>
+    <div class="hero-inner">
+      <span class="hero-badge">🚦 DVSA Approved · Manual &amp; Automatic</span>
+      <h1>Pass with confidence.<br><span class="highlight">First time.</span></h1>
+      <p>Patient, structured driving tuition tailored to how you learn best. Book your first lesson online in under a minute — no phone calls needed.</p>
+      <div class="hero-actions reveal visible">
+        <a href="https://cal.com/apex-driving-demo" target="_blank" rel="noopener" class="btn btn-green">Book Your First Lesson</a>
+        <a href="#services" class="btn btn-outline">View Lessons</a>
+      </div>
+      <div class="hero-stats">
+        <div class="hero-stat">
+          <div class="stat-dial" style="--pct:96;--dial-color:var(--green);">
+            <span class="stat-dial-value">96%</span>
+          </div>
+          <span>First-time pass rate*</span>
+        </div>
+        <div class="hero-stat">
+          <div class="stat-dial" style="--pct:80;--dial-color:var(--yellow);">
+            <span class="stat-dial-value">12 yrs</span>
+          </div>
+          <span>Instructing experience</span>
+        </div>
+        <div class="hero-stat">
+          <div class="stat-dial" style="--pct:88;--dial-color:var(--red);">
+            <span class="stat-dial-value">500+</span>
+          </div>
+          <span>Learners taught*</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <div class="road-divider"></div>
+
+  <!-- SERVICES -->
+  <section id="services" class="services">
+    <div class="container">
+      <div class="reveal">
+        <span class="eyebrow">Lessons &amp; Courses</span>
+        <h2 class="section-title">Choose your lesson</h2>
+        <p class="section-sub">Flexible tuition options, priced simply. All lessons use a dual-control car.</p>
+      </div>
+
+      <div class="grid-4">
+        <div class="card reveal" style="--accent:var(--yellow);">
+          <div class="card-top">
+            <h3>Standard Lesson</h3>
+            <span class="card-duration">60 mins</span>
+            <span class="card-price">From £32</span>
+          </div>
+          <p>One-to-one tuition at your own pace, covering everything from the basics to advanced manoeuvres.</p>
+          <a href="https://cal.com/apex-driving-demo/standard-lesson" target="_blank" rel="noopener" class="btn btn-outline btn-block">Book Lesson</a>
+        </div>
+
+        <div class="card reveal" style="--accent:var(--green);">
+          <div class="card-top">
+            <h3>Intensive Course</h3>
+            <span class="card-duration">5 days · 30 hrs</span>
+            <span class="card-price">From £850</span>
+          </div>
+          <p>Fast-track to test-ready with a focused block booking. Ideal if you need to pass in a hurry.</p>
+          <a href="https://cal.com/apex-driving-demo/intensive-course" target="_blank" rel="noopener" class="btn btn-outline btn-block">Book Course</a>
+        </div>
+
+        <div class="card reveal" style="--accent:var(--red);">
+          <div class="card-top">
+            <h3>Motorway Lessons</h3>
+            <span class="card-duration">90 mins</span>
+            <span class="card-price">From £48</span>
+          </div>
+          <p>Build real confidence at motorway speeds with an experienced instructor by your side.</p>
+          <a href="https://cal.com/apex-driving-demo/motorway-lesson" target="_blank" rel="noopener" class="btn btn-outline btn-block">Book Lesson</a>
+        </div>
+
+        <div class="card reveal" style="--accent:var(--yellow);">
+          <div class="card-top">
+            <h3>Test Prep / Mock Test</h3>
+            <span class="card-duration">2 hrs</span>
+            <span class="card-price">From £60</span>
+          </div>
+          <p>A full mock test run-through covering your local test routes and common examiner routes.</p>
+          <a href="https://cal.com/apex-driving-demo/test-prep" target="_blank" rel="noopener" class="btn btn-outline btn-block">Book Mock Test</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- INSTRUCTOR -->
+  <section id="instructor">
+    <div class="container">
+      <div class="reveal center">
+        <span class="eyebrow">Your Instructor</span>
+        <h2 class="section-title">Meet your instructor</h2>
+      </div>
+
+      <div class="instructor-wrap reveal">
+        <div class="instructor-photo">JD</div>
+        <div class="instructor-info">
+          <h3>James Doyle</h3>
+          <span class="instructor-role">DVSA Approved Driving Instructor (ADI) · 12 years experience</span>
+          <p>James has helped over 500 learners pass their test across Manchester and the surrounding areas. Calm, patient and endlessly encouraging, he tailors every lesson plan to how you learn best — whether that's building confidence from zero or polishing up before test day.</p>
+          <div class="badge-row">
+            <span class="badge"><span class="dot">●</span> Manual &amp; Automatic</span>
+            <span class="badge"><span class="dot">●</span> DBS Checked</span>
+            <span class="badge"><span class="dot">●</span> 5-Star Rated</span>
+            <span class="badge"><span class="dot">●</span> Nervous Driver Specialist</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <div class="road-divider"></div>
+
+  <!-- TESTIMONIALS -->
+  <section id="testimonials" class="testimonials">
+    <div class="container">
+      <div class="reveal center">
+        <span class="eyebrow">Reviews</span>
+        <h2 class="section-title">What learners say</h2>
+      </div>
+
+      <div class="grid-3">
+        <div class="testimonial-card reveal">
+          <div class="stars">★★★★★</div>
+          <p>"Passed first time thanks to James's patience and clear instructions. Couldn't recommend Apex enough!"</p>
+          <div class="testimonial-name">Sarah M.</div>
+          <div class="testimonial-meta">Passed after 8 weeks of lessons</div>
+        </div>
+        <div class="testimonial-card reveal">
+          <div class="stars">★★★★★</div>
+          <p>"The intensive course got me test-ready in just one week. Brilliant instructor, would 100% recommend."</p>
+          <div class="testimonial-name">Tom R.</div>
+          <div class="testimonial-meta">Intensive Course graduate</div>
+        </div>
+        <div class="testimonial-card reveal">
+          <div class="stars">★★★★★</div>
+          <p>"Motorway lessons were exactly what I needed before my test. Felt so much more confident behind the wheel."</p>
+          <div class="testimonial-name">Priya K.</div>
+          <div class="testimonial-meta">Motorway lessons + Test Prep</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- BOOKING CTA -->
+  <section id="booking" class="cta-section">
+    <div class="container reveal">
+      <h2>Ready to get moving?</h2>
+      <p>Book your first lesson online — takes less than 60 seconds</p>
+      <a href="https://cal.com/apex-driving-demo" target="_blank" rel="noopener" class="btn btn-green">Book Your First Lesson</a>
+    </div>
+  </section>
+
+  <div class="road-divider"></div>
+
+  <!-- CONTACT -->
+  <section id="contact" class="contact">
+    <div class="container">
+      <div class="reveal center">
+        <span class="eyebrow">Contact</span>
+        <h2 class="section-title">Get in touch</h2>
+      </div>
+
+      <div class="contact-grid">
+        <div class="contact-card reveal">
+          <div class="contact-icon">📞</div>
+          <h3>Phone</h3>
+          <p><a href="tel:+441234567890">+44 1234 567890</a></p>
+        </div>
+        <div class="contact-card reveal">
+          <div class="contact-icon">✉</div>
+          <h3>Email</h3>
+          <p><a href="mailto:hello@apexdrivingschool.co.uk">hello@apexdrivingschool.co.uk</a></p>
+        </div>
+        <div class="contact-card reveal">
+          <div class="contact-icon">💬</div>
+          <h3>WhatsApp</h3>
+          <p><a href="https://wa.me/441234567890" target="_blank" rel="noopener">Message us on WhatsApp</a></p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<footer>
+  <p>© 2026 Apex Driving School</p>
+  <p class="credit">Website &amp; booking system by PhoenixFlow — <a href="https://phoenixflow.framer.website" target="_blank" rel="noopener">phoenixflow.framer.website</a></p>
+</footer>
+
+<script>
+  // Mobile menu toggle
+  const menuToggle = document.getElementById('menuToggle');
+  const navLinks = document.getElementById('navLinks');
+
+  menuToggle.addEventListener('click', () => {
+    navLinks.classList.toggle('open');
+  });
+
+  navLinks.querySelectorAll('a').forEach(link => {
+    link.addEventListener('click', () => navLinks.classList.remove('open'));
+  });
+
+  // Scroll reveal animations
+  const revealEls = document.querySelectorAll('.reveal');
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('visible');
+        observer.unobserve(entry.target);
+      }
+    });
+  }, { threshold: 0.15 });
+
+  revealEls.forEach(el => observer.observe(el));
+</script>
+
+</body>
+</html>
