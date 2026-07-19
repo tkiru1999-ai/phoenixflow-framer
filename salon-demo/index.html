@@ -5,6 +5,8 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Super Salon — Premium Cuts. Zero Hassle.</title>
 <meta name="description" content="Super Salon, Southall, West London. Book your appointment online in 60 seconds — instant confirmation, no phone calls needed.">
+<meta name="theme-color" content="#FFF8EE">
+<meta name="mobile-web-app-capable" content="yes">
 <link rel="icon" type="image/svg+xml" href="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAzMiAzMiI+CjxyZWN0IHdpZHRoPSIzMiIgaGVpZ2h0PSIzMiIgcng9IjciIGZpbGw9IiNGRkYzRTIiLz4KPGcgZmlsbD0ibm9uZSIgc3Ryb2tlPSIjMUIxNzEyIiBzdHJva2Utd2lkdGg9IjIiIHN0cm9rZS1saW5lY2FwPSJyb3VuZCIgc3Ryb2tlLWxpbmVqb2luPSJyb3VuZCI+CjxjaXJjbGUgY3g9IjEwIiBjeT0iOS41IiByPSIyLjYiLz4KPGNpcmNsZSBjeD0iMTAiIGN5PSIyMS41IiByPSIyLjYiLz4KPGxpbmUgeDE9IjI1IiB5MT0iNi41IiB4Mj0iMTIuNyIgeTI9IjE5Ii8+CjxsaW5lIHgxPSIxMi43IiB5MT0iMTIiIHgyPSIxNi45IiB5Mj0iMTYuMiIvPgo8bGluZSB4MT0iMTkuMiIgeTE9IjE4LjYiIHgyPSIyNSIgeTI9IjI0LjUiLz4KPC9nPgo8L3N2Zz4K">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -218,11 +220,15 @@
   .menu-toggle{
     display:none;
     flex-direction:column;
+    align-items:center;
+    justify-content:center;
     gap:5px;
+    width:44px;
+    height:44px;
     background:none;
     border:none;
     cursor:pointer;
-    padding:6px;
+    padding:0;
   }
   .menu-toggle span{
     width:24px;height:2px;background:var(--ink);
@@ -650,7 +656,13 @@
         <div class="hero-media">
           <div class="hero-blob"></div>
           <div class="hero-photo">
-            <img src="https://images.unsplash.com/photo-1781455793310-8427c96454c7?auto=format&fit=crop&w=1200&q=80" alt="Inside Super Salon's barbershop" loading="eager" fetchpriority="high">
+            <img
+              src="https://images.unsplash.com/photo-1781455793310-8427c96454c7?auto=format&fit=crop&w=900&q=80"
+              srcset="https://images.unsplash.com/photo-1781455793310-8427c96454c7?auto=format&fit=crop&w=500&q=80 500w,
+                      https://images.unsplash.com/photo-1781455793310-8427c96454c7?auto=format&fit=crop&w=900&q=80 900w,
+                      https://images.unsplash.com/photo-1781455793310-8427c96454c7?auto=format&fit=crop&w=1300&q=80 1300w"
+              sizes="(max-width: 980px) 90vw, 45vw"
+              alt="Inside Super Salon's barbershop" loading="eager" fetchpriority="high">
           </div>
           <div class="hero-tag">
             <div class="why-icon">
@@ -680,7 +692,13 @@
       <div class="grid-3">
         <div class="card reveal">
           <div class="card-media">
-            <img src="https://images.unsplash.com/photo-1596362601603-b74f6ef166e4?auto=format&fit=crop&w=800&q=80" alt="Barber scissors and comb, ready for a precision haircut" loading="lazy">
+            <img
+              src="https://images.unsplash.com/photo-1596362601603-b74f6ef166e4?auto=format&fit=crop&w=600&q=80"
+              srcset="https://images.unsplash.com/photo-1596362601603-b74f6ef166e4?auto=format&fit=crop&w=400&q=80 400w,
+                      https://images.unsplash.com/photo-1596362601603-b74f6ef166e4?auto=format&fit=crop&w=600&q=80 600w,
+                      https://images.unsplash.com/photo-1596362601603-b74f6ef166e4?auto=format&fit=crop&w=800&q=80 800w"
+              sizes="(max-width: 900px) 100vw, 33vw"
+              alt="Barber scissors and comb, ready for a precision haircut" loading="lazy">
             <span class="card-price">From £15</span>
           </div>
           <div class="card-body">
@@ -693,7 +711,13 @@
 
         <div class="card reveal">
           <div class="card-media">
-            <img src="https://images.unsplash.com/photo-1647140655214-e4a2d914971f?auto=format&fit=crop&w=800&q=80" alt="Barber trimming a client's hair with scissors" loading="lazy">
+            <img
+              src="https://images.unsplash.com/photo-1647140655214-e4a2d914971f?auto=format&fit=crop&w=600&q=80"
+              srcset="https://images.unsplash.com/photo-1647140655214-e4a2d914971f?auto=format&fit=crop&w=400&q=80 400w,
+                      https://images.unsplash.com/photo-1647140655214-e4a2d914971f?auto=format&fit=crop&w=600&q=80 600w,
+                      https://images.unsplash.com/photo-1647140655214-e4a2d914971f?auto=format&fit=crop&w=800&q=80 800w"
+              sizes="(max-width: 900px) 100vw, 33vw"
+              alt="Barber trimming a client's hair with scissors" loading="lazy">
             <span class="card-price">From £22</span>
           </div>
           <div class="card-body">
@@ -706,7 +730,13 @@
 
         <div class="card reveal">
           <div class="card-media">
-            <img src="https://images.unsplash.com/photo-1779350676620-fde279b1d023?auto=format&fit=crop&w=800&q=80" alt="Sleek finished haircut styled from behind" loading="lazy">
+            <img
+              src="https://images.unsplash.com/photo-1779350676620-fde279b1d023?auto=format&fit=crop&w=600&q=80"
+              srcset="https://images.unsplash.com/photo-1779350676620-fde279b1d023?auto=format&fit=crop&w=400&q=80 400w,
+                      https://images.unsplash.com/photo-1779350676620-fde279b1d023?auto=format&fit=crop&w=600&q=80 600w,
+                      https://images.unsplash.com/photo-1779350676620-fde279b1d023?auto=format&fit=crop&w=800&q=80 800w"
+              sizes="(max-width: 900px) 100vw, 33vw"
+              alt="Sleek finished haircut styled from behind" loading="lazy">
             <span class="card-price">From £35</span>
           </div>
           <div class="card-body">
