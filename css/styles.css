@@ -150,6 +150,17 @@ section{padding:104px 0;position:relative;}
 }
 
 .btn-block{width:100%;}
+
+.btn[disabled]{
+  cursor:not-allowed;
+  opacity:0.55;
+}
+.btn[disabled]:hover{
+  transform:none;
+  box-shadow:none;
+  border-color:var(--border);
+  color:var(--ink);
+}
 .btn-sm{padding:11px 20px;font-size:13.5px;}
 
 /* Header */
@@ -421,12 +432,6 @@ nav{
   gap:24px;
 }
 
-.tier-grid.cols-2{
-  grid-template-columns:repeat(2,1fr);
-  max-width:860px;
-  margin:0 auto;
-}
-
 .tier-card{
   background:var(--card);
   border:1px solid var(--border);
@@ -461,6 +466,7 @@ nav{
   border-radius:999px;
 }
 .tier-badge.gold{background:var(--gold);}
+.tier-badge.muted{background:var(--muted);}
 
 .tier-name{font-size:19px;font-weight:600;margin-bottom:10px;}
 
@@ -506,6 +512,7 @@ nav{
 
 .tier-warning{
   font-size:13px;
+  font-style:italic;
   color:var(--muted);
   margin-bottom:16px;
   line-height:1.5;
@@ -556,6 +563,7 @@ nav{
   margin-bottom:14px;
 }
 
+.pricing-step h4{font-size:16px;font-weight:600;margin-bottom:6px;}
 .pricing-step p{color:var(--ink-soft);font-size:14.5px;}
 
 /* About */
@@ -699,7 +707,6 @@ footer{
   .steps{grid-template-columns:1fr;}
   .auto-grid{grid-template-columns:1fr;}
   .tier-grid{grid-template-columns:1fr;}
-  .tier-grid.cols-2{grid-template-columns:1fr;}
   .pricing-steps{grid-template-columns:1fr;gap:28px;}
 }
 
