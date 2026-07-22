@@ -467,6 +467,20 @@ nav{
   margin-bottom:20px;
 }
 
+.tier-care-note{
+  font-size:13px;
+  color:var(--muted);
+  margin-bottom:16px;
+}
+
+.pricing-footnote{
+  text-align:center;
+  color:var(--muted);
+  font-size:14px;
+  max-width:560px;
+  margin:16px auto 0;
+}
+
 .tier-features{margin:16px 0 26px;flex-grow:1;}
 .tier-features li{
   display:flex;
