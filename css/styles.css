@@ -368,6 +368,10 @@ nav{
   margin-top:12px;
 }
 
+.auto-grid.cols-3{
+  grid-template-columns:repeat(3,1fr);
+}
+
 .auto-card{
   background:var(--card);
   border:1px solid var(--border);
@@ -715,6 +719,7 @@ footer{
   .problem-grid{grid-template-columns:1fr;}
   .steps{grid-template-columns:1fr;}
   .auto-grid{grid-template-columns:1fr;}
+  .auto-grid.cols-3{grid-template-columns:1fr;}
   .tier-grid{grid-template-columns:1fr;}
   .tier-grid.cols-4{grid-template-columns:1fr;}
   .pricing-steps{grid-template-columns:1fr;gap:28px;}
