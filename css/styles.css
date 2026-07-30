@@ -432,6 +432,11 @@ nav{
   gap:24px;
 }
 
+.tier-grid.cols-4{
+  grid-template-columns:repeat(4,1fr);
+  gap:20px;
+}
+
 .tier-card{
   background:var(--card);
   border:1px solid var(--border);
@@ -702,11 +707,16 @@ footer{
 }
 
 /* Responsive */
+@media (max-width:1180px){
+  .tier-grid.cols-4{grid-template-columns:repeat(2,1fr);}
+}
+
 @media (max-width:900px){
   .problem-grid{grid-template-columns:1fr;}
   .steps{grid-template-columns:1fr;}
   .auto-grid{grid-template-columns:1fr;}
   .tier-grid{grid-template-columns:1fr;}
+  .tier-grid.cols-4{grid-template-columns:1fr;}
   .pricing-steps{grid-template-columns:1fr;gap:28px;}
 }
 
